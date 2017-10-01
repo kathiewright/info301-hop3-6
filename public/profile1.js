@@ -13,4 +13,3 @@
 	var classYears = [];   
   var currentYear = 2017;
   var graduation = "";
-
