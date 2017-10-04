@@ -28,7 +28,43 @@ Hands-On Project 3-6:  Student Profile
 ----------------------------------------------------------------------------------
 #B
 ----------------------------------------------------------------------------------
-    function getClassStanding2() {
+    function getClassStanding() {
+          //store the radio button elements to the array (index values 0-3)
+        classYears = document.getElementsByName("classStanding");    
+        for (var i = 0; i < 4; i++) {
+             if (classYears[i].checked) {               //if the current value is checked
+                 studentYear = classYears[i].value;     //store the current value to studentYear
+                 i = 4;                                 //break the loop by setting the counter to a number that connot be processed
+             }
+        }
+    }
+
+----------------------------------------------------------------------------------
+#C
+----------------------------------------------------------------------------------
+    function getPreferences() {
+    //each checkbox is an independent decision, requiring its own decision structure
+      if(document.getElementById("tuition").checked){
+        tuition = "In-State";
+      } else {
+        tuition = "Out-of-State";    
+      }
+       if(document.getElementById("housing").checked){
+        housing = "On-Campus";
+      } else {
+        housing = "Off-Campus";    
+      }
+
+       if(document.getElementById("finAid").checked){
+        finAid = "Receives Financial Aid";
+      } else {
+        finAid = "No Financial Aid";    
+      }
+    }
+
+#D
+----------------------------------------------------------------------------------
+    function getClassStanding() {
       classYears = document.getElementsByName("classStanding");
       //store the radio button values to the array classSYears(index values 0 - 3)
       if(classYears[0].checked) {
@@ -43,30 +79,34 @@ Hands-On Project 3-6:  Student Profile
         alert("Please select a class year!")
       }
     }
-
+#E
 ----------------------------------------------------------------------------------
-#C
-----------------------------------------------------------------------------------
-    function getPreferences() {
-    //each checkbox is an independent decision, requiring its own decision structure
-    if(document.getElementById("tuition").checked){
-      tuition = "In-State";
-    } else {
-      tuition = "Out-of-State";    
+    function getClassStanding() {
+      var currentYear = 2017;
+        var graduation = "";
+
+          //store the radio button elements to the array (index values 0-3)
+        classYears = document.getElementsByName("classStanding");    
+        for (var i = 0; i < 4; i++) {
+             if (classYears[i].checked) {               //if the current value is checked
+                 studentYear = classYears[i].value;     //store the current value to studentYear
+                 i = 4;                                 //break the loop by setting the counter to a number that connot be processed
+             }
+        }
+
+        //use a switch statement block to evaluate the value stored to studentYear
+      switch(studentYear) {
+          case "Freshman":
+              graduation = currentYear + 4;
+              break;                                //break statements are used to break to the bottom rather than process other cases
+          case "Sophomore":
+              graduation = currentYear + 3;
+              break;
+          case "Junior":
+              graduation = currentYear + 2;
+              break;
+          case "Senior":
+              graduation = currentYear + 1;
+      }
     }
-
-     if(document.getElementById("housing").checked){
-      housing = "On-Campus";
-    } else {
-      housing = "Off-Campus";    
-    }
-
-     if(document.getElementById("finAid").checked){
-      finAid = "Receives Financial Aid";
-    } else {
-      finAid = "No Financial Aid";    
-    }
-  }
-
-
 ----------------------------------------------------------------------------------
