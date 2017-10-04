@@ -11,6 +11,4 @@
 	var housing = "";
 	var finAid = "";
 	var classYears = [];   
-  var currentYear = 2017;
-  var graduation = "";
 
