@@ -11,4 +11,4 @@
 	var housing = "";
 	var finAid = "";
 	var classYears = [];   
-
+        var graduation = "";
